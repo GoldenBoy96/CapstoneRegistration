@@ -11,7 +11,7 @@ namespace Repository.Repository
 {
     public class StudentInSemesterRepo : GenericRepo<StudentInSemester>, IStudentInSemesterRepo
     {
-        public StudentInSemesterRepo(CapstoneRigistrationContext context) : base(context)
+        public StudentInSemesterRepo() : base()
         {
         }
     }

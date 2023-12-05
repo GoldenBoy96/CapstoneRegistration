@@ -14,9 +14,9 @@ namespace Repository.GenericRepository
         protected readonly CapstoneRigistrationContext _context;
         protected readonly DbSet<T> _dbSet;
 
-        public GenericRepo(CapstoneRigistrationContext context)
+        public GenericRepo()
         {
-            _context = context;
+            _context = new CapstoneRigistrationContext();
             _dbSet = _context.Set<T>();
         }
 

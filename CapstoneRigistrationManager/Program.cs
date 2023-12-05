@@ -15,10 +15,10 @@ IConfigurationRoot configuration = (new ConfigurationBuilder())
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
             .AddJsonFile("appsettings.json")
             .Build();
-builder.Services.AddDbContext<CapstoneRigistrationContext>(option =>
-{
-    option.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-});
+//builder.Services.AddDbContext<CapstoneRigistrationContext>(option =>
+//{
+//    option.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+//});
 
 
 //Repository

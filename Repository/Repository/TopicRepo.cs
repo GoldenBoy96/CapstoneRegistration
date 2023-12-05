@@ -11,7 +11,7 @@ namespace Repository.Repository
 {
     public class TopicRepo : GenericRepo<Topic>, ITopicRepo
     {
-        public TopicRepo(CapstoneRigistrationContext context) : base(context)
+        public TopicRepo() : base()
         {
         }
     }

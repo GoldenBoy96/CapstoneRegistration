@@ -11,7 +11,7 @@ namespace Repository.Repository
 {
     public class LecturerRepo : GenericRepo<Lecturer>, ILecturerRepo
     {
-        public LecturerRepo(CapstoneRigistrationContext context) : base(context)
+        public LecturerRepo() : base()
         {
         }
     }

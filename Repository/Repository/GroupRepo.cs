@@ -11,7 +11,7 @@ namespace Repository.Repository
 {
     public class GroupRepo : GenericRepo<Group>, IGroupRepo
     {
-        public GroupRepo(CapstoneRigistrationContext context) : base(context)
+        public GroupRepo() : base()
         {
         }
     }
