@@ -11,11 +11,9 @@ namespace Repository.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public readonly CapstoneRigistrationContext _context;
 
         public UnitOfWork(IGroupRepo groupRepo, ILecturerInGroupRepo lecturerInGroupRepo, ILecturerRepo lecturerRepo, ISemesterRepo semesterRepo, IStudentInGroupRepo studentInGroupRepo, IStudentInSemesterRepo studentInSemesterRepo, IStudentRepo studentRepo, ITopicOfLecturerRepo topicOfLecturerRepo, ITopicRepo topicRepo)
         {
-            _context = new();
             GroupRepo = groupRepo;
             LecturerInGroupRepo = lecturerInGroupRepo;
             LecturerRepo = lecturerRepo;
