@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataAccessObject;
-
-public partial class Student
+namespace BussinessObject.Models
 {
-    public int Id { get; set; }
+    public partial class Student
+    {
+        public Student()
+        {
+            Groups = new HashSet<Group>();
+            StudentInGroups = new HashSet<StudentInGroup>();
+            StudentInSemesters = new HashSet<StudentInSemester>();
+        }
 
-    public string Code { get; set; } = null!;
+        public int Id { get; set; }
+        public string Code { get; set; } = null!;
+        public string FullName { get; set; } = null!;
+        public string? Avatar { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public bool Gender { get; set; }
+        public bool Status { get; set; }
 
-    public string FullName { get; set; } = null!;
-
-    public string? Avatar { get; set; }
-
-    public DateTime DateOfBirth { get; set; }
-
-    public bool Gender { get; set; }
-
-    public bool Status { get; set; }
-
-    public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
-
-    public virtual ICollection<StudentInGroup> StudentInGroups { get; set; } = new List<StudentInGroup>();
-
-    public virtual ICollection<StudentInSemester> StudentInSemesters { get; set; } = new List<StudentInSemester>();
+        public virtual ICollection<Group> Groups { get; set; }
+        public virtual ICollection<StudentInGroup> StudentInGroups { get; set; }
+        public virtual ICollection<StudentInSemester> StudentInSemesters { get; set; }
+    }
 }

@@ -1,6 +1,6 @@
 ﻿using BussinessLogic.Abstraction;
-using DataAccessObject;
-using Repository.IRepository;
+using BussinessObject.Models;
+using CapstoneRegistration.Repository.Repository;
 using Repository.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -12,31 +12,31 @@ namespace BussinessLogic.Implement
 {
     public class StudentService :IStudentService
     {
-        IStudentRepo _studentRepo;
+        IStudentRepository _studentRepository;
 
         public StudentService(IUnitOfWork unitOfWork)
         {
-            _studentRepo = unitOfWork.StudentRepo;
+            _studentRepository = unitOfWork.StudentRepository;
         }
 
-        public bool AddStudent(Student student)
+        public void AddStudent(Student student)
         {
-            return _studentRepo.Add(student);
+            _studentRepository.Insert(student);
         }
 
         public List<Student> GetAllStudent()
         {
-            return (List<Student>)_studentRepo.GetAll();
+            return (List<Student>)_studentRepository.GetAll();
         }
 
         public Student? GetStudentById(int? id)
         {
-            return _studentRepo.GetById(id);
+            return _studentRepository.GetById(id);
         }
 
-        public bool RemoveStudent(Student student)
+        public void RemoveStudent(Student student)
         {
-            return _studentRepo.Remove(student);
+            _studentRepository.Delete(student);
         }
     }
 }

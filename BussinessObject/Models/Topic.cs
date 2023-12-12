@@ -1,25 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataAccessObject;
-
-public partial class Topic
+namespace BussinessObject.Models
 {
-    public int Id { get; set; }
+    public partial class Topic
+    {
+        public Topic()
+        {
+            Groups = new HashSet<Group>();
+            TopicOfLecturers = new HashSet<TopicOfLecturer>();
+        }
 
-    public string Name { get; set; } = null!;
+        public int Id { get; set; }
+        public string Name { get; set; } = null!;
+        public string Description { get; set; } = null!;
+        public bool Status { get; set; }
+        public DateTime CreateDate { get; set; }
+        public int SemesterId { get; set; }
 
-    public string Description { get; set; } = null!;
-
-    public bool Status { get; set; }
-
-    public DateTime CreateDate { get; set; }
-
-    public int SemesterId { get; set; }
-
-    public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
-
-    public virtual Semester Semester { get; set; } = null!;
-
-    public virtual ICollection<TopicOfLecturer> TopicOfLecturers { get; set; } = new List<TopicOfLecturer>();
+        public virtual Semester Semester { get; set; } = null!;
+        public virtual ICollection<Group> Groups { get; set; }
+        public virtual ICollection<TopicOfLecturer> TopicOfLecturers { get; set; }
+    }
 }

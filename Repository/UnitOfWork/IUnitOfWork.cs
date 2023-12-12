@@ -1,5 +1,4 @@
-﻿using DataAccessObject;
-using Repository.IRepository;
+﻿using CapstoneRegistration.Repository.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +9,11 @@ namespace Repository.UnitOfWork
 {
     public interface IUnitOfWork
     {
-        public IGroupRepo GroupRepo { get; }
-        public ILecturerInGroupRepo LecturerInGroupRepo { get; }
-        public ILecturerRepo LecturerRepo { get; }
-        public ISemesterRepo SemesterRepo { get; }
-        public IStudentInGroupRepo StudentInGroupRepo { get; }
-        public IStudentInSemesterRepo StudentInSemesterRepo { get; }
-        public IStudentRepo StudentRepo { get; }
-        public ITopicOfLecturerRepo TopicOfLecturerRepo { get; }
-        public ITopicRepo TopicRepo { get; }
+        public IGroupRepository GroupRepository { get; }
+        public ILecturerRepository LecturerRepository { get; }
+        public ISemesterRepository SemesterRepository { get; }
+        public IStudentRepository StudentRepository { get; }
+        public ITopicRepository TopicRepository { get; }
 
     }
 }

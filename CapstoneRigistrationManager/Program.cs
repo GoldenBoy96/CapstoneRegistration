@@ -1,10 +1,7 @@
 using BussinessLogic.Implement;
 using BussinessLogic.Abstraction;
-using DataAccessObject;
-using Microsoft.EntityFrameworkCore;
-using Repository.IRepository;
-using Repository.Repository;
 using Repository.UnitOfWork;
+using CapstoneRegistration.Repository.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,16 +11,12 @@ builder.Services.AddRazorPages();
 
 
 //Repository
-builder.Services.AddSingleton<IGroupRepo, GroupRepo>();
-builder.Services.AddSingleton<ILecturerInGroupRepo, LecturerInGroupRepo>();
-builder.Services.AddSingleton<ILecturerRepo, LecturerRepo>();
-builder.Services.AddSingleton<ISemesterRepo, SemesterRepo>();
-builder.Services.AddSingleton<IStudentInGroupRepo, StudentInGroupRepo>();
-builder.Services.AddSingleton<IStudentInSemesterRepo, StudentInSemesterRepo>();
-builder.Services.AddSingleton<IStudentRepo, StudentRepo>();
-builder.Services.AddSingleton<ITopicOfLecturerRepo, TopicOfLecturerRepo>();
-builder.Services.AddSingleton<ITopicRepo, TopicRepo>();
-builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IGroupRepository, GroupRepository>();
+builder.Services.AddScoped<ILecturerRepository, LecturerRepository>();
+builder.Services.AddScoped<ISemesterRepository, SemesterRepository>();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<ITopicRepository, TopicRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //Service
 builder.Services.AddTransient<IStudentService, StudentService>();
